@@ -1,4 +1,5 @@
 {
+    "installCommand": "npm i -y",
     "headers": [
       {
         "source": "/api/(.*)",
