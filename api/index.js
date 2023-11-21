@@ -13,7 +13,7 @@ export default function handler(req, res, next) {
       // return res.status(500).json({ type: 'error', message: error.message });
     }
   
-  res.setHeader('Access-Control-Allow-Origin', req.get("origin"));
+  res.setHeader('Access-Control-Allow-Origin', req.get("origin") || req.get("Origin") || req.get("host") || req.get("Host"));
   if (req.method === "OPTIONS"){req.status(200).end()}else{
     getURI(JSON.parse(req.body)['my-url'])
 }
