@@ -14,10 +14,6 @@ export default function handler(req, res, next) {
     }
   
   res.setHeader('Access-Control-Allow-Origin', req.get("origin"));
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  res.setHeader('Access-Control-Allow-Methods', '*')
-  res.setHeader('Access-Control-Allow-Headers', "Authorization,authorization")
-  res.setHeader('Content-Type', 'application/json');
   if (req.method === "OPTIONS"){req.status(200).end()}else{
     getURI(JSON.parse(req.body)['my-url'])
 }
